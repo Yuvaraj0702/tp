@@ -8,9 +8,9 @@ import java.util.List;
 
 import seedu.address.model.Model;
 import seedu.address.model.person.Person;
-import seedu.address.model.person.Remark;
 import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
+import seedu.address.model.person.Remark;
 import seedu.address.logic.commands.exceptions.CommandException;
 
 
@@ -67,8 +67,8 @@ public class RemarkCommand extends Command {
     }
 
     private String generateSuccessMessage(Person personToEdit) {
-        String message = !new Remark(remark).value.isEmpty() ?
-                MESSAGE_ADD_REMARK_SUCCESS : MESSAGE_DELETE_REMARK_SUCCESS;
+        String message = !new Remark(remark).value.isEmpty()
+                ? MESSAGE_ADD_REMARK_SUCCESS : MESSAGE_DELETE_REMARK_SUCCESS;
         return String.format(message, personToEdit);
     }
 
