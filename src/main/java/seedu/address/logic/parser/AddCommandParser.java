@@ -28,6 +28,7 @@ public class AddCommandParser implements Parser<AddCommand> {
     /**
      * Parses the given {@code String} of arguments in the context of the AddCommand
      * and returns an AddCommand object for execution.
+     *
      * @throws ParseException if the user input does not conform the expected format
      */
     public AddCommand parse(String args) throws ParseException {
@@ -46,7 +47,7 @@ public class AddCommandParser implements Parser<AddCommand> {
         Remark remark = new Remark("");
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
 
-        Person person = new Person(name, phone, email,remark, address, tagList);
+        Person person = new Person(name, phone, email, remark, address, tagList);
 
         return new AddCommand(person);
     }
