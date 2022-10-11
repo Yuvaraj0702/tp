@@ -78,6 +78,7 @@ Format: `find n/STUDENT_NAME`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 Use student name as user is looking for details and doesn't have them.
+</div>
 
 ### Deleting a student: `delete`
 
