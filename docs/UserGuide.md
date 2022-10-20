@@ -23,8 +23,9 @@ fast, FRIDAY can get your contact management tasks done faster than traditional 
    4. Dates of Mastery Checks
    5. Grades
    6. Remarks
-3. View all students
-4. Find individual student details
+3. Find individual student details
+4. View all students
+5. Sort students
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -71,15 +72,6 @@ The Telegram handle, consultation date, and Mastery Check date are optional.
 A person can have any number of tags (including 0).
 </div>
 
-### View individual student details: `find`
-
-View a particular student's details.
-
-Format: `find n/STUDENT_NAME`
-
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-Use student name as user is looking for details and doesn't have them.
-
 ### Deleting a student: `delete`
 
 Deletes the student at the given index from FRIDAY.
@@ -97,8 +89,30 @@ Edits a student's details in FRIDAY.
 Format: `edit INDEX [n/NAME] [t/TELEGRAM_HANDLE] [c/CONSULTATION] [m/MASTERY_CHECK] [tag/TAG]`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-The index of the student can be seen from the student list.
-The name, Telegram handle, consultation, mastery check, and tag are optional, but there should be at least one parameter.
+The index of the student can be seen from the student list.<br>
+The name, Telegram handle, consultation, mastery check, and tag(s) are optional, but there should be at least one parameter.<br>
+A student can have any number of tags (including 0).
+</div>
+
+### Editing a student: `remark`
+
+Adds a remark for a specified student.
+
+Format: `remark INDEX [r/REMARK]`
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+The index of the student can be seen from the student list.<br>
+The remark is optional. Not including the remark (i.e. `remark INDEX`) will remove any existing remark from the student.<br>
+</div>
+
+### Finding individual student details: `find`
+
+View a particular student's details.
+
+Format: `find n/STUDENT_NAME`
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+Use student name as user is looking for details and doesn't have them.
 </div>
 
 ### Viewing all students: `list`
@@ -106,6 +120,20 @@ The name, Telegram handle, consultation, mastery check, and tag are optional, bu
 Lists all students in FRIDAY.
 
 Format: `list`
+
+### Sorting students: `sort`
+
+Sorts all students in FRIDAY with the given criteria, in ascending or descending order.
+
+Format: `sort CRITERIA/ORDER`
+
+`CRITERIA` can be `n` (name), `t` (Telegram handle), `c` (Consultation), or `m` (Mastery Check).
+`ORDER` can be `asc` (ascending) or `desc` (descending). 
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+The names and Telegram handles are sorted in alphabetical order, while the consultations and Mastery Checks are sorted
+by time. 
+</div>
 
 ### Getting User Guide link: `guide`
 
@@ -131,8 +159,10 @@ Format: `help`
 |----------------------------------|--------------------------------------------------------------------------------------------|
 | **Add a student**                | `add n/NAME [t/TELEGRAM_HANDLE] [c/CONSULTATION_DATE] [m/MASTERY_CHECK_DATE] [tag/TAG]...` |
 | **Delete a student**             | `delete i/INDEX`                                                                           |
-| **Edit a student's details**     | `edit INDEX [n/NAME] [t/TELEGRAM_HANDLE] [c/CONSULTATION] [m/MASTERY_CHECK] [tag/TAG]`     |
-| **View all students**            | `list`                                                                                     |
+| **Edit a student's details**     | `edit INDEX [n/NAME] [t/TELEGRAM_HANDLE] [c/CONSULTATION] [m/MASTERY_CHECK] [tag/TAG]...`  |
+| **Add remarks for a student**    | `remark INDEX [r/REMARK]`                                                                  |
 | **Find a student's details**     | `find s/STUDENT_NAME`                                                                      |
+| **View all students**            | `list`                                                                                     |
+| **Sort students**                | `sort CRITERIA/ORDER`                                                                      |
 | **Get a link to the User Guide** | `guide`                                                                                    |
 | **Getting Help**                 | `help`                                                                                     |
