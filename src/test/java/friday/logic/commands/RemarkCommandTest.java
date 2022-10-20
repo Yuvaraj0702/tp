@@ -69,8 +69,8 @@ public class RemarkCommandTest {
         showPersonAtIndex(model, INDEX_FIRST_STUDENT);
 
         Student firstStudent = model.getFilteredStudentList().get(INDEX_FIRST_STUDENT.getZeroBased());
-        Student editedStudent = new StudentBuilder(model.getFilteredStudentList().get(INDEX_FIRST_STUDENT.getZeroBased()))
-                .withRemark(REMARK_STUB).build();
+        Student editedStudent = new StudentBuilder(model.getFilteredStudentList()
+                .get(INDEX_FIRST_STUDENT.getZeroBased())).withRemark(REMARK_STUB).build();
 
         RemarkCommand remarkCommand = new RemarkCommand(INDEX_FIRST_STUDENT,
                 new Remark(editedStudent.getRemark().value));

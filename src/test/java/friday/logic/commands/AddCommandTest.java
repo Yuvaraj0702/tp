@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.function.Predicate;
 
-import friday.testutil.StudentBuilder;
 import org.junit.jupiter.api.Test;
 
 import friday.commons.core.GuiSettings;
@@ -21,7 +20,9 @@ import friday.model.Model;
 import friday.model.ReadOnlyFriday;
 import friday.model.ReadOnlyUserPrefs;
 import friday.model.student.Student;
+import friday.testutil.StudentBuilder;
 import javafx.collections.ObservableList;
+
 
 public class AddCommandTest {
 

@@ -10,15 +10,17 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import friday.testutil.StudentBuilder;
 import org.junit.jupiter.api.Test;
 
 import friday.logic.commands.CommandTestUtil;
 import friday.model.student.Student;
 import friday.model.student.exceptions.DuplicatePersonException;
+import friday.testutil.StudentBuilder;
 import friday.testutil.TypicalStudents;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
+
 
 public class MasteryCheckBookTest {
 

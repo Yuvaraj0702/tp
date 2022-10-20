@@ -8,8 +8,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import friday.testutil.StudentBuilder;
 import org.junit.jupiter.api.Test;
+
+import friday.testutil.StudentBuilder;
 
 public class NameContainsKeywordsPredicateTest {
 

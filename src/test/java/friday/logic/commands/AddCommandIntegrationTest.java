@@ -4,7 +4,6 @@ import static friday.logic.commands.CommandTestUtil.assertCommandFailure;
 import static friday.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static friday.testutil.TypicalStudents.getTypicalAddressBook;
 
-import friday.testutil.StudentBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +11,7 @@ import friday.model.Model;
 import friday.model.ModelManager;
 import friday.model.UserPrefs;
 import friday.model.student.Student;
+import friday.testutil.StudentBuilder;
 
 /**
  * Contains integration tests (interaction with the Model) for {@code AddCommand}.
