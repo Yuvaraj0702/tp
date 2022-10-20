@@ -21,14 +21,14 @@ class JsonSerializableFriday {
 
     public static final String MESSAGE_DUPLICATE_PERSON = "Persons list contains duplicate person(s).";
 
-    private final List<JsonAdaptedStudent> persons = new ArrayList<>();
+    private final List<JsonAdaptedStudent> students = new ArrayList<>();
 
     /**
      * Constructs a {@code JsonSerializableFriday} with the given persons.
      */
     @JsonCreator
-    public JsonSerializableFriday(@JsonProperty("persons") List<JsonAdaptedStudent> persons) {
-        this.persons.addAll(persons);
+    public JsonSerializableFriday(@JsonProperty("persons") List<JsonAdaptedStudent> students) {
+        this.students.addAll(students);
     }
 
     /**
@@ -37,7 +37,7 @@ class JsonSerializableFriday {
      * @param source future changes to this will not affect the created {@code JsonSerializableFriday}.
      */
     public JsonSerializableFriday(ReadOnlyFriday source) {
-        persons.addAll(source.getPersonList().stream().map(JsonAdaptedStudent::new).collect(Collectors.toList()));
+        students.addAll(source.getPersonList().stream().map(JsonAdaptedStudent::new).collect(Collectors.toList()));
     }
 
     /**
@@ -47,7 +47,7 @@ class JsonSerializableFriday {
      */
     public Friday toModelType() throws IllegalValueException {
         Friday addressBook = new Friday();
-        for (JsonAdaptedStudent jsonAdaptedStudent : persons) {
+        for (JsonAdaptedStudent jsonAdaptedStudent : students) {
             Student student = jsonAdaptedStudent.toModelType();
             if (addressBook.hasPerson(student)) {
                 throw new IllegalValueException(MESSAGE_DUPLICATE_PERSON);
