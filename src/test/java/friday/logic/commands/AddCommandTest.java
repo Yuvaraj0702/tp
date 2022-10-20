@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.function.Predicate;
 
+import friday.testutil.StudentBuilder;
 import org.junit.jupiter.api.Test;
 
 import friday.commons.core.GuiSettings;
@@ -20,7 +21,6 @@ import friday.model.Model;
 import friday.model.ReadOnlyFriday;
 import friday.model.ReadOnlyUserPrefs;
 import friday.model.student.Student;
-import friday.testutil.PersonBuilder;
 import javafx.collections.ObservableList;
 
 public class AddCommandTest {
@@ -33,7 +33,7 @@ public class AddCommandTest {
     @Test
     public void execute_personAcceptedByModel_addSuccessful() throws Exception {
         ModelStubAcceptingPersonAdded modelStub = new ModelStubAcceptingPersonAdded();
-        Student validStudent = new PersonBuilder().build();
+        Student validStudent = new StudentBuilder().build();
 
         CommandResult commandResult = new AddCommand(validStudent).execute(modelStub);
 
@@ -43,7 +43,7 @@ public class AddCommandTest {
 
     @Test
     public void execute_duplicatePerson_throwsCommandException() {
-        Student validStudent = new PersonBuilder().build();
+        Student validStudent = new StudentBuilder().build();
         AddCommand addCommand = new AddCommand(validStudent);
         ModelStub modelStub = new ModelStubWithPerson(validStudent);
 
@@ -52,8 +52,8 @@ public class AddCommandTest {
 
     @Test
     public void equals() {
-        Student alice = new PersonBuilder().withName("Alice").build();
-        Student bob = new PersonBuilder().withName("Bob").build();
+        Student alice = new StudentBuilder().withName("Alice").build();
+        Student bob = new StudentBuilder().withName("Bob").build();
         AddCommand addAliceCommand = new AddCommand(alice);
         AddCommand addBobCommand = new AddCommand(bob);
 

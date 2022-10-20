@@ -16,7 +16,7 @@ import friday.model.util.SampleDataUtil;
 /**
  * A utility class to help with building Person objects.
  */
-public class PersonBuilder {
+public class StudentBuilder {
 
     public static final String DEFAULT_NAME = "Amy Bee";
     public static final String DEFAULT_TELEGRAMHANDLE = "amy123";
@@ -32,9 +32,9 @@ public class PersonBuilder {
     private Set<Tag> tags;
 
     /**
-     * Creates a {@code PersonBuilder} with the default details.
+     * Creates a {@code StudentBuilder} with the default details.
      */
-    public PersonBuilder() {
+    public StudentBuilder() {
         name = new Name(DEFAULT_NAME);
         telegramHandle = new TelegramHandle(DEFAULT_TELEGRAMHANDLE);
         consultation = new Consultation(DEFAULT_CONSULTATION);
@@ -44,9 +44,9 @@ public class PersonBuilder {
     }
 
     /**
-     * Initializes the PersonBuilder with the data of {@code personToCopy}.
+     * Initializes the StudentBuilder with the data of {@code personToCopy}.
      */
-    public PersonBuilder(Student studentToCopy) {
+    public StudentBuilder(Student studentToCopy) {
         name = studentToCopy.getName();
         telegramHandle = studentToCopy.getTelegramHandle();
         consultation = studentToCopy.getConsultation();
@@ -58,7 +58,7 @@ public class PersonBuilder {
     /**
      * Sets the {@code Name} of the {@code Person} that we are building.
      */
-    public PersonBuilder withName(String name) {
+    public StudentBuilder withName(String name) {
         this.name = new Name(name);
         return this;
     }
@@ -66,7 +66,7 @@ public class PersonBuilder {
     /**
      * Parses the {@code tags} into a {@code Set<Tag>} and set it to the {@code Person} that we are building.
      */
-    public PersonBuilder withTags(String ... tags) {
+    public StudentBuilder withTags(String ... tags) {
         this.tags = SampleDataUtil.getTagSet(tags);
         return this;
     }
@@ -74,7 +74,7 @@ public class PersonBuilder {
     /**
      * Sets the {@code MasteryCheck} of the {@code Person} that we are building.
      */
-    public PersonBuilder withMasteryCheck(LocalDate desiredDate) {
+    public StudentBuilder withMasteryCheck(LocalDate desiredDate) {
         this.masteryCheck = new MasteryCheck(desiredDate);
         return this;
     }
@@ -82,7 +82,7 @@ public class PersonBuilder {
     /**
      * Sets the {@code TelegramHandle} of the {@code Person} that we are building.
      */
-    public PersonBuilder withTelegramHandle(String handle) {
+    public StudentBuilder withTelegramHandle(String handle) {
         this.telegramHandle = new TelegramHandle(handle);
         return this;
     }
@@ -90,7 +90,7 @@ public class PersonBuilder {
     /**
      * Sets the {@code Consultation} of the {@code Person} that we are building.
      */
-    public PersonBuilder withConsultation(LocalDate desiredDate) {
+    public StudentBuilder withConsultation(LocalDate desiredDate) {
         this.consultation = new Consultation(desiredDate);
         return this;
     }
@@ -98,7 +98,7 @@ public class PersonBuilder {
     /**
      * Sets the {@code Remark} of the {@code Person} that we are building.
      */
-    public PersonBuilder withRemark(String remark) {
+    public StudentBuilder withRemark(String remark) {
         this.remark = new Remark(remark);
         return this;
     }

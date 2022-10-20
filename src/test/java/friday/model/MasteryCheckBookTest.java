@@ -10,12 +10,12 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import friday.testutil.StudentBuilder;
 import org.junit.jupiter.api.Test;
 
 import friday.logic.commands.CommandTestUtil;
 import friday.model.student.Student;
 import friday.model.student.exceptions.DuplicatePersonException;
-import friday.testutil.PersonBuilder;
 import friday.testutil.TypicalStudents;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -44,7 +44,7 @@ public class MasteryCheckBookTest {
     @Test
     public void resetData_withDuplicatePersons_throwsDuplicatePersonException() {
         // Two persons with the same identity fields
-        Student editedAlice = new PersonBuilder(TypicalStudents.ALICE)
+        Student editedAlice = new StudentBuilder(TypicalStudents.ALICE)
                 .withMasteryCheck(CommandTestUtil.VALID_MASTERYCHECK_BOB)
                 .withTags(CommandTestUtil.VALID_TAG_HUSBAND)
                 .build();
@@ -73,7 +73,7 @@ public class MasteryCheckBookTest {
     @Test
     public void hasPerson_personWithSameIdentityFieldsInAddressBook_returnsTrue() {
         addressBook.addPerson(TypicalStudents.ALICE);
-        Student editedAlice = new PersonBuilder(TypicalStudents.ALICE)
+        Student editedAlice = new StudentBuilder(TypicalStudents.ALICE)
                 .withMasteryCheck(CommandTestUtil.VALID_MASTERYCHECK_BOB)
                 .withTags(CommandTestUtil.VALID_TAG_HUSBAND)
                 .build();

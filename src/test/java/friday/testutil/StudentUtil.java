@@ -16,7 +16,7 @@ import friday.model.tag.Tag;
 /**
  * A utility class for Person.
  */
-public class PersonUtil {
+public class StudentUtil {
 
     /**
      * Returns an add command string for adding the {@code person}.
